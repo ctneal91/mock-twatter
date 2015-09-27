@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+- 2.2.3
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: UsQsSr2LXmVAUkq8qxspxafCVCzOtGeq0cK36hCRK6sOPjuqwFoQqckmVB1uAQ3hIZUPARFB278A//uLmegIXBsIsbqYnn2yVJysKohq9UqbaXGOVLCJECUavRvbuRNyAKGBGIOSdPa1Z1msznFcYoMBs7Ssn3SFU8j1DJV34sf08D77+VX/S901q+bWEgplZqNKKQWeqZnCkchx5Zdwtce+XyeSve/avcMfxn38npuYEM9nSRCDoJywgo+w+wDewRou90sHqL5eqbPcuGyt5XZd1Iuh4YAfDC83Q1orlboBdZ33nH6QpozPSmUQ2nhh6hhMyBhG7aYeGl3yaFBjjUCa9PJWk9fsuMmYxDJsrSjYRtz8zbVJiYn3/8rFrTMLBH9vGK6EnIW3AjwHkmrQo2IAFdZIIvvktL9U+thTGk4oRVhYcTnRF7yLdrnyMQqox1EZbHezT4U4NnspUwWvFr0hezUzKD/PtdXGMgDb+OK+sgBQ+qe0dkyJiELhzmV5mttTLmiNR2sibZUt4q+LmLk7buCixDm5K/Gucvfqmcakldk3IX3tt9ki9F/r1TfKMX3cA861/BfYMc10LAh7uFLy4LlpZljFekU6tnI/xha0MEDZitG3k3g4DaYJpa0z/friKODDGu7SRRl0Y/GmzYCz2h+AbjogDPMwAmyffdk=
+  app: cryptic-bastion-8975
+  on:
+    repo: ctneal91/mock-twatter
