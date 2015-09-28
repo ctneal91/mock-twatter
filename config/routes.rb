@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'following/create'
+
+  get 'following/delete'
+
   root 'home#dashboard'
 
   get 'cheet/:id' => 'cheets#detail', as: :cheet
