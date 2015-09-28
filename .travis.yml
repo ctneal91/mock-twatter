@@ -13,3 +13,7 @@ deploy:
   app: cryptic-bastion-8975
   on:
     repo: ctneal91/mock-twatter
+    
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
