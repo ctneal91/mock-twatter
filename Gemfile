@@ -47,3 +47,4 @@ group :development do
 end
 
 gem 'minitest-rails'
+gem 'simple_form'
