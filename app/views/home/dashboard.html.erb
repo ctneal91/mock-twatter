@@ -8,3 +8,15 @@
     <li> <%= cheet.entry %> </li>
   <% end %>
 </ul>
+
+<div class="all users">
+  <% @users.each do |user| %>
+    <li>
+      <% if @current_user.following? user %>
+        <%= link_to "Stop Following #{user.email}", stop_following_user_path(id: user.id), method: :post %>
+      <% else %>
+        <%= link_to "Follow #{user.email}", follow_user_path(id: user.id), method: :post %>
+      <% end %>
+    </li>
+  <% end %>
+</div>

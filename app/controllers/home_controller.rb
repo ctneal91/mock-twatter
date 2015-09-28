@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def dashboard
     @cheets = Cheet.all
+     @users = User.where("id != ?", @current_user.id)
   end
 
 end

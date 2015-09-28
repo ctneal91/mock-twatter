@@ -1,21 +1,22 @@
 Rails.application.routes.draw do
-  get 'following/create'
-
-  get 'following/delete'
-
   root 'home#dashboard'
 
-  get 'cheet/:id' => 'cheets#detail', as: :cheet
+  #following routes
+  post 'user/:id/follow' => 'following#create', as: :follow_user
+  post 'user/:id/stop-following' => 'following#delete', as: :stop_following_user
 
+
+  #cheets routes
+  get 'cheet/:id' => 'cheets#detail', as: :cheet
   get 'newcheets' => 'cheets#new', as: :new
   post 'cheets' => 'cheets#create', as: :cheets
 
-  # get 'cheet/:id' => 'cheets#detail', as: :cheet
-
+  #sign in routes
   get 'sign_in' => 'sessions#new', as: :sign_in
   post 'sign_in' => 'sessions#create'
   delete 'sign_in' => 'sessions#delete', as: :sign_out
 
+  #sign up routes
   get '/users/new' => 'users#new', as: :sign_up
   post '/users' => 'users#create', as: :users
 
