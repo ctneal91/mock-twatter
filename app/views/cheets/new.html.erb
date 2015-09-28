@@ -1,0 +1,16 @@
+<h1> The internet needs another voiced opinion. </h1>
+<p> </p>
+<h3> Add to the Chatter </h3>
+
+<%= form_for @cheet do |f| %>
+
+  <div>
+    <%= f.label :entry %>
+    <%= f.text_field :entry %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>

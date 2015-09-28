@@ -1,0 +1,2 @@
+module CheetsHelper
+end

@@ -2,3 +2,9 @@
 <p>Find me in app/views/home/dashboard.html.erb</p>
 
 <h2> #TheSecret </h2>
+
+<ul>
+  <% @cheets.each do |cheet| %>
+    <li> <%= cheet.entry %> </li>
+  <% end %>
+</ul>
