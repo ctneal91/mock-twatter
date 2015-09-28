@@ -4,8 +4,14 @@
 <h2> #TheSecret </h2>
 
 <ul>
-  <% @cheets.each do |cheet| %>
-    <li> <%= cheet.entry %> </li>
+  <% @people.each do |user| %>
+    <li>
+      <h3><%= user.email %></h3>
+      <% user.cheets.each do %>
+        <p><%= cheet.entry %></p>
+      <% end %>
+      <%= cheet.entry %>
+    </li>
   <% end %>
 </ul>
 
