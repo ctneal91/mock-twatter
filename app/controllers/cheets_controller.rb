@@ -1,7 +1,7 @@
 class CheetsController < ApplicationController
 
   before_action :authenticate_user!
-  
+
   def detail
     @cheet = Cheet.find params[:id]
   end
@@ -12,6 +12,7 @@ class CheetsController < ApplicationController
 
   def create
     @cheet = Cheet.new params.require(:cheet).permit(:entry)
+    @cheet.user = @current_user
     if @cheet.save
       redirect_to root_path
     else

@@ -4,13 +4,10 @@
 <h2> #TheSecret </h2>
 
 <ul>
-  <% @people.each do |user| %>
+  <% @cheets.each do |cheet| %>
     <li>
-      <h3><%= user.email %></h3>
-      <% user.cheets.each do %>
-        <p><%= cheet.entry %></p>
-      <% end %>
-      <%= cheet.entry %>
+      <h3><%= cheet.user.email %></h3>
+      <p> <%= cheet.entry %></p>
     </li>
   <% end %>
 </ul>

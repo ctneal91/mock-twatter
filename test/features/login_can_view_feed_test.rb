@@ -27,7 +27,7 @@ class LoginCanViewFeedTest < Capybara::Rails::TestCase
 
   test "Can view feed when logged in" do
     me = User.create email: 'neal@example.com', password: '12345678'
-
+    
     visit root_path
 
     fill_in "Email", with: 'neal@example.com'
