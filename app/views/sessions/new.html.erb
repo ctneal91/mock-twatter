@@ -1,20 +1,21 @@
-<h1>Please Sign In</h1>
+<h4>Please Sign In</h4>
 
+<div class="sign_in">
+  <%= form_tag do %>
 
-<%= form_tag do %>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
 
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
+    <div>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
 
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
+    <div>
+      <%= submit_tag "Sign In" %> or <%= link_to 'Sign Up', sign_up_path %>
+    </div>
 
-  <div>
-    <%= submit_tag "Sign In" %> or <%= link_to 'Sign Up', sign_up_path %>
-  </div>
-
-<% end %>
+  <% end %>
+</div>

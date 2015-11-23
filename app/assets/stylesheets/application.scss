@@ -6,7 +6,7 @@ body {
   background: #ecf0f1;
 }
 .my_content, .top_container, .my_logo{
-  width: 1300px;
+  width: 1000px;
   margin: 0px auto;
 }
 
@@ -46,7 +46,24 @@ body {
   .all_cheets {
     list-style: none;
     width: 75%;
+    .individual_cheet {
+      width: 500px;
+      margin: 10px 0px;
+      padding: 5px 5px;
+      background: lighten(#AAF200, 20%);
+      border-radius: 5px;
+      .cheet_username {
+        margin-top: 3px;
+        margin-bottom: 0px;
+        font-size: 12px
+      }
+      .individual_entry {
+        margin-bottom: 0px;
+        font-size: 14px;
+      }
+    }
   }
+
   .all_users_box {
     background: darken(#ecf0f1, 10%);
     padding: 5px 10px;
@@ -54,5 +71,24 @@ body {
     a {
       color: #e67e22;
     }
+  }
+}
+
+input {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.sign_in, .sign_up {
+  input {
+    width: 250px;
+    height: 35px;
+    margin-left: 5px;
+  }
+}
+.cheet_entry {
+  input {
+    width: 500px;
+    height: 40px;
   }
 }

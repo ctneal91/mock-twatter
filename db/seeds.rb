@@ -6,7 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Number1 = Cheet.new
-Number1.entry = "This is not twitter..."
+user1 = User.create! email: 'jane@doe.com',
+                     password: "12345678"
 
-Number1.save
+user2 = User.create! email: "ruth_badder@scotus.com",
+                     password: "12345678"
+
+user3 = User.create! email: "scalia@angry.com",
+                     password: "GodMerica"
+
+user4 = User.create! email: "barry@prez.com",
+                     password: "almostdone"
+
+user5 = User.create! email: "taylor@1989.com",
+                     password: "HarryStyles"
+
+cheet1 = Cheet.create! entry: "I need coffee. Like all the time.",
+                       user_id: user1.id
+
+cheet2 = Cheet.create! entry: "Everyone is born equal!",
+                       user_id: user2.id

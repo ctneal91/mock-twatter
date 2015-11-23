@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150929005938) do
+ActiveRecord::Schema.define(version: 20151123025213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cheets", force: :cascade do |t|
-    t.string   "entry"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.string   "entry",      limit: 140
   end
 
   create_table "follows", force: :cascade do |t|

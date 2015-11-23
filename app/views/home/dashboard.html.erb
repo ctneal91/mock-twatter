@@ -2,9 +2,9 @@
   <div class="all_cheets">
     <% @cheets.each do |cheet| %>
       <div class="individual_cheet">
-        <h4><%= cheet.user.email %></h4>
-        <p> <%= cheet.entry %></p>
-      <div>
+          <p class="individual_entry"> <%= cheet.entry %></p>
+          <p class="cheet_username"><%= cheet.user.email %></p>
+      </div>
     <% end %>
   </div>
 
