@@ -1,3 +1,58 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'home';
+
+body {
+  background: #ecf0f1;
+}
+.my_content, .top_container, .my_logo{
+  width: 1300px;
+  margin: 0px auto;
+}
+
+.my_logo {
+  border-bottom: 1px solid #e67e22;
+}
+
+.my_content, .my_logo {
+  color: #e67e22;
+}
+.my_nav {
+  width: 100%;
+  background: #e67e22;
+  color: #ecf0f1;
+  .top_container {
+    display: flex;
+    padding: 10px 0px;
+    * {
+      padding: 0px 15px;
+      color: #ecf0f1;
+    }
+    i {
+      padding: 0px 3px;
+      a {
+        padding: 5px 3px;
+      }
+    }
+    .username_greeting {
+      padding-left: 0px;
+    }
+  }
+}
+
+.my_content_container {
+  margin-top: 10px;
+  display: flex;
+  .all_cheets {
+    list-style: none;
+    width: 75%;
+  }
+  .all_users_box {
+    background: darken(#ecf0f1, 10%);
+    padding: 5px 10px;
+    width: 25%;
+    a {
+      color: #e67e22;
+    }
+  }
+}

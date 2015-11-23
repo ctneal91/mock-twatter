@@ -5,33 +5,40 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-
-  <div class="container">
-
-    <% if @current_user %>
-      <div>
-        <%= link_to 'Sign Out', sign_out_path, method: :delete %>
-      </div>
-    <% end %>
-
-    <% if alert %>
-      <div class="alert alert-danger"> <%= alert %> </div>
-    <% end %>
-
-    <% if notice %>
-      <div class="alert alert-info"> <%= notice %> </div>
-    <% end %>
-
-    <%= link_to new_path do %>
-      Add to the Chatter
-    <% end %>
-
-    <%= yield %>
-
-
+  <div class="my_nav">
+    <div class="top_container">
+      <% if @current_user %>
+        <div class="username_greeting">
+          <i class="fa fa-home"><%= link_to "#{@current_user.email}", root_path %></i>
+        </div>
+        <div>
+          <i class="fa fa-sign-out"><%= link_to 'Sign Out', sign_out_path, method: :delete %></i>
+        </div>
+        <%= link_to new_path do %>
+          <i class="fa fa-pencil"> Add to the Chatter</i>
+        <% end %>
+      <% else %>
+        Welcome
+      <% end %>
+    </div>
+    <div class="my_warnings">
+      <% if alert %>
+        <div class="alert alert-danger"> <%= alert %> </div>
+      <% end %>
+      <% if notice %>
+        <div class="alert alert-info"> <%= notice %> </div>
+      <% end %>
+    </div>
   </div>
-
+  <div class="my_logo">
+    <h1>Chatter</h1>
+    <h3>Because the internet doesn't have enough chatter already</h3>
+  </div>
+  <div class="my_content">
+    <%= yield %>
+  </div>
 </body>
 </html>

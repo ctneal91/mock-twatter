@@ -1,25 +1,23 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<div class="my_content_container">
+  <div class="all_cheets">
+    <% @cheets.each do |cheet| %>
+      <div class="individual_cheet">
+        <h4><%= cheet.user.email %></h4>
+        <p> <%= cheet.entry %></p>
+      <div>
+    <% end %>
+  </div>
 
-<h2> #TheSecret </h2>
-
-<ul>
-  <% @cheets.each do |cheet| %>
-    <li>
-      <h3><%= cheet.user.email %></h3>
-      <p> <%= cheet.entry %></p>
-    </li>
-  <% end %>
-</ul>
-
-<div class="all users">
-  <% @users.each do |user| %>
-    <li>
-      <% if @current_user.following? user %>
-        <%= link_to "Stop Following #{user.email}", stop_following_user_path(id: user.id), method: :post %>
-      <% else %>
-        <%= link_to "Follow #{user.email}", follow_user_path(id: user.id), method: :post %>
-      <% end %>
-    </li>
-  <% end %>
+  <div class="all_users_box">
+    <h4> Users </h4>
+    <% @users.each do |user| %>
+      <p>
+        <% if @current_user.following? user %>
+          <%= link_to "Stop Following #{user.email}", stop_following_user_path(id: user.id), method: :post %>
+        <% else %>
+          <%= link_to "Follow #{user.email}", follow_user_path(id: user.id), method: :post %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
 </div>
